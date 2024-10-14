@@ -1,4 +1,5 @@
 # 2024 CS Algorithm and Data Structure Lab #3 - Vector Class
+Define a class for 3D vector mathematics, and apply unit test
 ## Python codes
 - `vector.py`: `Vector3D` class definition
 - `my_vector.py`: Demostrate `Vector3D` class operations
