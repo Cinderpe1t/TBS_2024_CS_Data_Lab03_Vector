@@ -1,24 +1,25 @@
 """
 Name: Angelina Kim
 Date: Fall 2024
-Purpose: Implement 3D vector mathematics class
+Purpose: To create a representation of 3D vectors and their operations.
 """
+
 import math
 from typing import Union
 from typing import Any, Self
 
 class Vector3D:
-    """3D vector calculation class"""
+    """3D vector calculation class."""
     def __init__(self, x: float = 0, y: float = 0, z: float = 0):
         self.x = x
         self.y = y
         self.z = z
     
     def __str__(self) -> str:
-        return "(%s, %s, %s)" % (self.x, self.y, self.z)
+        return "Vector <%s,%s,%s>" % (self.x, self.y, self.z)
 
     def __repr__(self) -> str:
-        return "(%s, %s, %s)" % (self.x, self.y, self.z)
+        return "Vector3D(%s,%s,%s)" % (self.x, self.y, self.z)
 
     def add(self, other: Self) -> Self:
         """Add self and other 3D vectors."""
@@ -26,17 +27,17 @@ class Vector3D:
                               self.z + other.z)
     
     def __add__(self, other: Self) -> Self:
-        """Add two 3D vectors."""
+        """Magic method version of adding two 3D vectors."""
         return self.__class__(self.x + other.x, self.y + other.y, 
                               self.z + other.z)
     
-    def sub(self, other: Self) -> Self:
+    def subtract(self, other: Self) -> Self:
         """Subtract self and other 3D vectors."""
         return self.__class__(self.x - other.x, self.y - other.y, 
                               self.z - other.z)
     
-    def __sub__(self, other: Self) -> Self:
-        """Subtract two 3D vectors."""
+    def __subtract__(self, other: Self) -> Self:
+        """Magic method version of subtracting two 3D vectors."""
         return self.__class__(self.x - other.x, self.y - other.y, 
                               self.z - other.z)
 
@@ -46,7 +47,9 @@ class Vector3D:
         return inner_product
 
     def __mul__(self, other: Self) -> Union[float, Self, None]:
-        """Dot or inner product of two vectors or scale a vector."""
+        """Magic method of dot or inner product of two vectors
+        
+        Also scales vector through magic method."""
         if isinstance(other, Vector3D):
             inner_product = self.dot_product(other)
             return inner_product
@@ -55,17 +58,13 @@ class Vector3D:
             return self.__class__(x, y, z)
         else:
             return None
-
-    def __rmul__(self, other: Self) -> Self:
-        """Scale a vector."""
-        return self * other # call __mul__
     
     def scalar_product(self, scale: float) -> Self:
         """Scalar product of a vector."""
         return self * scale # call __mul__
     
     def __abs__(self) -> float:
-        """Length of a vector."""
+        """Magic method of calculating length of a vector."""
         return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
 
     def length(self) -> float:
