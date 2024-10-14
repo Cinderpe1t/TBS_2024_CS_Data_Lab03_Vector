@@ -36,7 +36,7 @@ class Vector3D:
         return self.__class__(self.x - other.x, self.y - other.y, 
                               self.z - other.z)
     
-    def __subtract__(self, other: Self) -> Self:
+    def __sub__(self, other: Self) -> Self:
         """Magic method version of subtracting two 3D vectors."""
         return self.__class__(self.x - other.x, self.y - other.y, 
                               self.z - other.z)
