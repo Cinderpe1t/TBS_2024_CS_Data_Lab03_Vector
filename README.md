@@ -16,7 +16,7 @@
 - `Vector3D.is_perpendicular()`: check if two vectors are perpendicular
 - `**`, `Vector3D.cross_product()`: cross product of two vectors
 - `==`, `!=`: vector comparison
-## Output
+## Output of my_test.py
 ```
 ------------------------------
 Vector case 1
@@ -63,4 +63,13 @@ a.acos(b):  90.0
 a.is_perpendicular(b):  True
 a ** b  Vector <0,0,1>
 a.cross_product(b):  Vector <0,0,1>
+```
+
+## Output of test_vector.py (assuming all goes well)
+```
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK
 ```
