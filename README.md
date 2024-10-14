@@ -2,7 +2,9 @@
 ## Python codes
 - `vector.py`: `Vector3D` class definition
 - `my_vector.py`: Demostrate `Vector3D` class operations
+- `test_vector.py` : Unit test `Vector3D` class
 - `$ python3 my_vector.py` executes the demonstration
+- `$ python3 test_vector.py` executes the unit test
 ## Operations
 - `+`, `Vector3D.add()`: 3D vector addition
 - `-`, `Vector3D.subtract()`: 3D vector subtraction
